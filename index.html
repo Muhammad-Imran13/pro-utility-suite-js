@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Utility Suite | Multi-Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light-mode">
+
+    <div class="main-wrapper">
+        <header>
+            <h1>Pro Utility Suite</h1>
+            <p>Advanced Multipurpose Calculation Dashboard</p>
+            <div class="theme-toggle">
+                <button onclick="setTheme('light')">☀️ Light</button>
+                <button onclick="setTheme('dark')">🌙 Dark</button>
+            </div>
+        </header>
+
+        <div class="tool-grid">
+
+            <section class="card">
+                <h3>🌡️ Temperature</h3>
+                <input type="number" id="tempInput" placeholder="Enter value...">
+                <select id="tempType">
+                    <option value="cToF">Celsius to Fahrenheit</option>
+                    <option value="fToC">Fahrenheit to Celsius</option>
+                </select>
+                <button onclick="convertTemp()">Convert</button>
+                <div id="tempRes" class="res-box"></div>
+            </section>
+
+            <section class="card">
+                <h3>📏 Length & Distance</h3>
+                <input type="number" id="lenInput" placeholder="Enter value...">
+                <select id="lenType">
+                    <option value="mToKm">Meter to Kilometer</option>
+                    <option value="kmToM">Kilometer to Meter</option>
+                    <option value="mToIn">Meter to Inches</option>
+                    <option value="kmToMile">Kilometer to Miles</option>
+                </select>
+                <button onclick="convertLen()">Convert</button>
+                <div id="lenRes" class="res-box"></div>
+            </section>
+
+            <section class="card">
+                <h3>💵 Global Currency (PKR Base)</h3>
+                <input type="number" id="currInput" placeholder="Enter PKR Amount">
+                <select id="currType">
+                    <option value="USD">US Dollar (USD)</option>
+                    <option value="EUR">Euro (EUR)</option>
+                    <option value="GBP">British Pound (GBP)</option>
+                    <option value="SAR">Saudi Riyal (SAR)</option>
+                    <option value="AED">UAE Dirham (AED)</option>
+                    <option value="CAD">Canadian Dollar (CAD)</option>
+                    <option value="AUD">Australian Dollar (AUD)</option>
+                    <option value="CNY">Chinese Yuan (CNY)</option>
+                    <option value="JPY">Japanese Yen (JPY)</option>
+                    <option value="INR">Indian Rupee (INR)</option>
+                </select>
+                <button onclick="convertCurr()">Convert Currency</button>
+                <div id="currRes" class="res-box"></div>
+            </section>
+
+            <section class="card">
+                <h3>⏳ Time Converter</h3>
+                <input type="number" id="timeInput" placeholder="Enter value...">
+                <select id="timeType">
+                    <option value="mToS">Minutes to Seconds</option>
+                    <option value="sToM">Seconds to Minutes</option>
+                    <option value="mToH">Minutes to Hours</option>
+                    <option value="hToM">Hours to Minutes</option>
+                </select>
+                <button onclick="convertTime()">Convert Time</button>
+                <div id="timeRes" class="res-box"></div>
+            </section>
+
+            <section class="card">
+                <h3>💾 Data Storage</h3>
+                <input type="number" id="dataInput" placeholder="Enter value...">
+                <select id="dataType">
+                    <option value="gbToMb">GB to MB</option>
+                    <option value="mbToGb">MB to GB</option>
+                    <option value="tbToGb">TB to GB</option>
+                </select>
+                <button onclick="convertData()">Convert Data</button>
+                <div id="dataRes" class="res-box"></div>
+            </section>
+
+            <section class="card">
+                <h3>⚖️ Weight Converter</h3>
+                <input type="number" id="weightInput" placeholder="Enter value...">
+                <select id="weightType">
+                    <option value="kgToLb">KG to Pounds</option>
+                    <option value="lbToKg">Pounds to KG</option>
+                    <option value="gToKg">Grams to KG</option>
+                </select>
+                <button onclick="convertWeight()">Convert Weight</button>
+                <div id="weightRes" class="res-box"></div>
+            </section>
+
+            <section class="card wide">
+                <h3>🔬 Advanced Number Analyzer</h3>
+                <input type="number" id="anaInput" placeholder="Enter number for deep analysis...">
+                <button onclick="runAnalysis()">Run Mathematical Analysis</button>
+                <div id="anaRes"></div>
+            </section>
+
+            <section class="card wide">
+                <h3>🎂 Pro Age & Birthday Engine</h3>
+                <input type="date" id="birthDate">
+                <button onclick="analyzeAge()">Calculate Detailed Age</button>
+                <div id="ageRes"></div>
+            </section>
+            <section class="card wide">
+                <h3>🎓 Academic Marksheet Portal</h3>
+                <div class="marks-input-container">
+                    <div class="input-row">
+                        <input type="text" id="studentName" placeholder="Student Name">
+                        <input type="text" id="rollNo" placeholder="Roll Number">
+                    </div>
+                    <div class="subject-grid">
+                        <div class="sub-input"><label>Math</label><input type="number" class="subj-marks"
+                                data-name="Mathematics"></div>
+                        <div class="sub-input"><label>English</label><input type="number" class="subj-marks"
+                                data-name="English"></div>
+                        <div class="sub-input"><label>Science</label><input type="number" class="subj-marks"
+                                data-name="Science"></div>
+                        <div class="sub-input"><label>History</label><input type="number" class="subj-marks"
+                                data-name="History"></div>
+                        <div class="sub-input"><label>Computer</label><input type="number" class="subj-marks"
+                                data-name="Computer"></div>
+                    </div>
+                    <button class="main-btn" onclick="generateMarksheet()">Generate Final Marksheet</button>
+                </div>
+
+                <div id="marksheetArea"></div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
